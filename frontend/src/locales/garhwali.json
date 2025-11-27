@@ -1,0 +1,154 @@
+{
+    "nav": {
+        "home": "Home (Garhwali - Coming Soon)",
+        "blogs": "Blogs (Garhwali - Coming Soon)",
+        "categories": "Categories (Garhwali - Coming Soon)",
+        "videos": "Videos (Garhwali - Coming Soon)",
+        "about": "About Uttarakhand (Garhwali - Coming Soon)",
+        "aboutUs": "About Us (Garhwali - Coming Soon)",
+        "contact": "Contact (Garhwali - Coming Soon)",
+        "login": "Login (Garhwali - Coming Soon)",
+        "signup": "Sign Up (Garhwali - Coming Soon)",
+        "profile": "Profile (Garhwali - Coming Soon)",
+        "logout": "Logout (Garhwali - Coming Soon)"
+    },
+    "hero": {
+        "title": "Discover the Land of Gods",
+        "subtitle": "Explore Uttarakhand's Hidden Gems, Culture & Adventures",
+        "cta": "Explore Blogs",
+        "ctaSecondary": "Watch Videos"
+    },
+    "features": {
+        "title": "Why Explore Uttarakhand?",
+        "subtitle": "Discover what makes this Himalayan paradise special",
+        "feature1": {
+            "title": "Sacred Temples",
+            "description": "Visit ancient pilgrimage sites and holy shrines"
+        },
+        "feature2": {
+            "title": "Mountain Adventures",
+            "description": "Trek through pristine valleys and snow-capped peaks"
+        },
+        "feature3": {
+            "title": "Rich Culture",
+            "description": "Experience vibrant traditions and local heritage"
+        },
+        "feature4": {
+            "title": "Wildlife Paradise",
+            "description": "Encounter diverse flora and fauna in national parks"
+        }
+    },
+    "categories": {
+        "title": "Explore by Category",
+        "subtitle": "Find content that interests you",
+        "temples": "Temples & Pilgrimage",
+        "adventure": "Adventure & Trekking",
+        "culture": "Culture & Heritage",
+        "wildlife": "Wildlife & Nature",
+        "food": "Food & Cuisine",
+        "festivals": "Festivals & Events",
+        "all": "All Categories",
+        "viewAll": "View All"
+    },
+    "blog": {
+        "readMore": "Read More",
+        "readLess": "Read Less",
+        "share": "Share",
+        "save": "Save",
+        "like": "Like",
+        "comment": "Comment",
+        "relatedPosts": "Related Posts",
+        "author": "Author",
+        "date": "Published",
+        "category": "Category",
+        "tags": "Tags",
+        "noBlogs": "No blogs found",
+        "loading": "Loading..."
+    },
+    "footer": {
+        "about": "About",
+        "aboutText": "Discover the beauty and culture of Uttarakhand through our curated stories and guides.",
+        "quickLinks": "Quick Links",
+        "categories": "Categories",
+        "social": "Follow Us",
+        "newsletter": "Newsletter",
+        "newsletterText": "Subscribe to get latest updates",
+        "emailPlaceholder": "Enter your email",
+        "subscribe": "Subscribe",
+        "copyright": "© 2025 Uttarakhand Blog. All rights reserved.",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service"
+    },
+    "auth": {
+        "loginTitle": "Welcome Back",
+        "loginSubtitle": "Login to your account",
+        "signupTitle": "Sign Up",
+        "signupSubtitle": "Create an account to get started",
+        "email": "Email",
+        "password": "Password",
+        "confirmPassword": "Confirm Password",
+        "fullName": "Full Name",
+        "mobile": "Mobile Number",
+        "emailOrMobile": "Email or Mobile Number",
+        "rememberMe": "Remember Me",
+        "forgotPassword": "Forgot Password?",
+        "loginButton": "Login",
+        "signupButton": "Create Account",
+        "alreadyHaveAccount": "Already have an account?",
+        "dontHaveAccount": "Don't have an account?",
+        "backToHome": "Back to Home"
+    },
+    "profile": {
+        "title": "Profile",
+        "profileInfo": "Profile Info",
+        "savedBlogs": "Saved Blogs",
+        "likedBlogs": "Liked Blogs",
+        "language": "Language Preference",
+        "logout": "Logout",
+        "edit": "Edit",
+        "memberSince": "Member Since",
+        "lastLogin": "Last Login",
+        "noSavedBlogs": "No saved blogs yet",
+        "noLikedBlogs": "No liked blogs yet",
+        "exploreBlogs": "Explore Blogs",
+        "languageNote": "Your language preference is saved locally and will be used to display content in your preferred language when available."
+    },
+    "contact": {
+        "title": "Get in Touch",
+        "subtitle": "We'd love to hear from you",
+        "name": "Name",
+        "email": "Email",
+        "subject": "Subject",
+        "message": "Message",
+        "send": "Send Message",
+        "phone": "Phone",
+        "address": "Address",
+        "followUs": "Follow Us"
+    },
+    "language": {
+        "name": "Garhwali",
+        "select": "Select Language",
+        "comingSoon": "Coming Soon"
+    },
+    "common": {
+        "search": "Search",
+        "filter": "Filter",
+        "sort": "Sort",
+        "reset": "Reset",
+        "apply": "Apply",
+        "cancel": "Cancel",
+        "save": "Save",
+        "delete": "Delete",
+        "edit": "Edit",
+        "view": "View",
+        "close": "Close",
+        "back": "Back",
+        "next": "Next",
+        "previous": "Previous",
+        "loading": "Loading...",
+        "error": "Something went wrong",
+        "success": "Success!",
+        "yes": "Yes",
+        "no": "No"
+    }
+}
