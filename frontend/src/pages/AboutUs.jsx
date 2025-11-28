@@ -13,7 +13,10 @@ import {
     MessageCircle,
 } from 'lucide-react';
 
+
+
 const AboutUs = () => {
+    // const { t } = useLanguage();
     const teamMembers = [
         {
             name: 'Rajesh Sharma',
@@ -66,15 +69,15 @@ const AboutUs = () => {
                             className="mb-6"
                         >
                             <span className="inline-block px-6 py-2 bg-accent/90 backdrop-blur-sm rounded-full text-white text-sm font-medium">
-                                ❤️ Made with Love for Uttarakhand
+                                ❤️ About Us
                             </span>
                         </motion.div>
 
                         <h1 className="text-5xl md:text-7xl font-heading font-bold text-white mb-6">
-                            About Us
+                            We Are Storytellers of Uttarakhand
                         </h1>
                         <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-                            A passionate team dedicated to sharing the stories, culture, and beauty of Devbhoomi
+                            Dedicated to showcasing the hidden gems, culture, and stories of Devbhoomi.
                         </p>
                     </motion.div>
                 </div>
@@ -95,14 +98,11 @@ const AboutUs = () => {
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-heading font-bold text-textPrimary mb-6 max-w-4xl mx-auto">
-                        Preserving Heritage, Inspiring Exploration
+                        Preserving Culture, Inspiring Travel
                     </h2>
 
                     <p className="text-xl text-textSecondary leading-relaxed max-w-4xl mx-auto">
-                        Our mission is to celebrate and preserve the rich cultural heritage of Uttarakhand while inspiring
-                        people around the world to explore its breathtaking landscapes, sacred temples, and vibrant
-                        traditions. We believe that every mountain peak, every ancient temple, and every local story
-                        deserves to be shared and cherished.
+                        We aim to be the most comprehensive digital platform for Uttarakhand, connecting travelers with authentic experiences while preserving and promoting the rich cultural heritage of the state.
                     </p>
                 </motion.div>
 
@@ -117,28 +117,22 @@ const AboutUs = () => {
                     <div>
                         <div className="inline-flex items-center space-x-3 mb-6 px-6 py-3 bg-gradient-to-r from-accent to-orange-600 rounded-full text-white">
                             <Lightbulb className="h-6 w-6" />
-                            <span className="font-semibold text-lg">Why We Built This</span>
+                            <span className="font-semibold text-lg">Our Story</span>
                         </div>
 
                         <h3 className="text-3xl md:text-4xl font-heading font-bold text-textPrimary mb-6">
-                            Bridging Tradition with Technology
+                            Born from Passion
                         </h3>
 
                         <div className="space-y-4 text-lg text-textSecondary leading-relaxed">
                             <p>
-                                Growing up in the mountains of Uttarakhand, we witnessed the incredible richness of our
-                                culture, the warmth of our people, and the majesty of the Himalayas. Yet, we noticed that
-                                many of these stories were not reaching the wider world.
+                                It all started with a simple trek to the Valley of Flowers. The breathtaking beauty and the warmth of the locals left an indelible mark on our hearts.
                             </p>
                             <p>
-                                In an age of digital connectivity, we saw an opportunity to create a platform that brings
-                                together authentic stories, stunning visuals, and practical travel information - all in one
-                                place. This website is our love letter to Devbhoomi.
+                                We realized that there was so much more to Uttarakhand than just the popular tourist destinations. There were stories waiting to be told, traditions waiting to be shared, and hidden trails waiting to be explored.
                             </p>
                             <p>
-                                Whether you're planning your first visit to the Char Dham, researching local cuisine, or
-                                simply seeking to connect with Uttarakhand's spiritual essence, we're here to guide you with
-                                genuine, heartfelt content.
+                                Thus, Uttarakhand Blog was born - a platform dedicated to bringing you the unseen and unheard stories of Devbhoomi.
                             </p>
                         </div>
                     </div>
@@ -167,14 +161,14 @@ const AboutUs = () => {
                     <div className="text-center mb-12">
                         <div className="inline-flex items-center space-x-3 mb-6 px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full text-white">
                             <Users className="h-6 w-6" />
-                            <span className="font-semibold text-lg">Meet the Team</span>
+                            <span className="font-semibold text-lg">Our Team</span>
                         </div>
 
                         <h2 className="text-4xl md:text-5xl font-heading font-bold text-textPrimary mb-4">
-                            The Faces Behind the Stories
+                            Meet the Creators
                         </h2>
                         <p className="text-xl text-textSecondary max-w-3xl mx-auto">
-                            A diverse team of writers, photographers, and storytellers united by our love for Uttarakhand
+                            A diverse group of passionate individuals working together to bring you the best of Uttarakhand.
                         </p>
                     </div>
 
@@ -236,23 +230,18 @@ const AboutUs = () => {
                         </div>
 
                         <h3 className="text-3xl md:text-4xl font-heading font-bold text-textPrimary mb-6">
-                            Building a Global Community
+                            Looking Ahead
                         </h3>
 
                         <div className="space-y-4 text-lg text-textSecondary leading-relaxed">
                             <p>
-                                We envision a world where Uttarakhand's cultural heritage is celebrated globally, where
-                                travelers can connect authentically with local communities, and where the next generation
-                                grows up proud of their roots.
+                                We envision a future where sustainable tourism drives the economy of Uttarakhand while preserving its fragile ecosystem.
                             </p>
                             <p>
-                                Our platform will continue to evolve, adding more stories, more voices, and more resources.
-                                We dream of creating a comprehensive digital archive that preserves folk tales, traditional
-                                recipes, architectural marvels, and local wisdom for generations to come.
+                                We want to create a community of responsible travelers who appreciate and respect the local culture and environment.
                             </p>
                             <p>
-                                Join us on this journey as we build bridges between mountains and cities, tradition and
-                                innovation, past and future.
+                                Through our platform, we hope to inspire a new generation of explorers to discover the true essence of the Himalayas.
                             </p>
                         </div>
 
@@ -287,7 +276,7 @@ const AboutUs = () => {
                             Let's Connect
                         </h2>
                         <p className="text-xl text-white/90 mb-12 leading-relaxed">
-                            Have a story to share? Questions about Uttarakhand? We'd love to hear from you!
+                            Have a story to share or a question to ask? We'd love to hear from you.
                         </p>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
@@ -321,13 +310,13 @@ const AboutUs = () => {
                                 href="mailto:contact@uttarakhandblog.com"
                                 className="px-8 py-4 bg-accent hover:bg-accent/90 text-white rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-xl"
                             >
-                                Send Us a Message
+                                Send Message
                             </a>
                             <a
                                 href="/blogs"
                                 className="px-8 py-4 bg-white/10 backdrop-blur-md border-2 border-white/30 text-white rounded-full font-semibold text-lg hover:bg-white/20 transition-all duration-300 hover:scale-105"
                             >
-                                Explore Our Blogs
+                                Explore Blogs
                             </a>
                         </div>
                     </motion.div>

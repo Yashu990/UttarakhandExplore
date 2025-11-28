@@ -3,12 +3,15 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Heart, Bookmark, Share2, Clock, User, ArrowRight } from 'lucide-react';
 
+
+
 const LatestBlogs = () => {
+    // const { t } = useLanguage();
     const blogs = [
         {
             id: 1,
-            title: 'Valley of Flowers: A Photographer\'s Paradise',
-            excerpt: 'Witness the mesmerizing carpet of alpine flowers in one of the most beautiful national parks in the world.',
+            title: 'The Mystical Char Dham Yatra',
+            excerpt: 'A spiritual journey through the four sacred shrines of Yamunotri, Gangotri, Kedarnath, and Badrinath.',
             image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=800',
             author: 'Amit Singh',
             date: '18 Nov 2024',
@@ -19,8 +22,8 @@ const LatestBlogs = () => {
         },
         {
             id: 2,
-            title: 'Ancient Temples of Garhwal: Architectural Marvels',
-            excerpt: 'Explore the intricate stone carvings and spiritual significance of centuries-old temples.',
+            title: 'Kumaoni Folk Art: Aipan',
+            excerpt: 'Discover the traditional red and white folk art of Kumaon region used in festivals and ceremonies.',
             image: 'https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=800',
             author: 'Meera Joshi',
             date: '17 Nov 2024',
@@ -31,8 +34,8 @@ const LatestBlogs = () => {
         },
         {
             id: 3,
-            title: 'Trekking to Roopkund: The Mysterious Skeleton Lake',
-            excerpt: 'Join us on an adventure to one of the most enigmatic high-altitude lakes in the Himalayas.',
+            title: 'Trekking to Roopkund Lake',
+            excerpt: 'An adventurous trek to the mysterious skeleton lake situated at an altitude of 5,029 meters.',
             image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=800',
             author: 'Vikram Rawat',
             date: '16 Nov 2024',
@@ -43,8 +46,8 @@ const LatestBlogs = () => {
         },
         {
             id: 4,
-            title: 'Kumaoni Folk Music: Echoes of the Hills',
-            excerpt: 'Discover the rich musical heritage that has been passed down through generations.',
+            title: 'Festivals of Uttarakhand',
+            excerpt: 'Experience the vibrant culture through festivals like Harela, Phool Dei, and Nanda Devi Raj Jat.',
             image: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=800',
             author: 'Sunita Negi',
             date: '15 Nov 2024',
@@ -55,8 +58,8 @@ const LatestBlogs = () => {
         },
         {
             id: 5,
-            title: 'Wildlife Safari in Jim Corbett National Park',
-            excerpt: 'Experience thrilling encounters with Bengal tigers in India\'s oldest national park.',
+            title: 'River Rafting in Rishikesh',
+            excerpt: 'The ultimate guide to white water rafting in the Ganges at the adventure capital of India.',
             image: 'https://images.unsplash.com/photo-1549366021-9f761d450615?q=80&w=800',
             author: 'Ravi Chauhan',
             date: '14 Nov 2024',
@@ -67,8 +70,8 @@ const LatestBlogs = () => {
         },
         {
             id: 6,
-            title: 'Traditional Uttarakhandi Festivals and Celebrations',
-            excerpt: 'Immerse yourself in the vibrant festivals that bring communities together.',
+            title: 'Traditional Pahadi Cuisine',
+            excerpt: 'Explore the unique flavors of Uttarakhand with dishes like Kafuli, Phanu, and Bal Mithai.',
             image: 'https://images.unsplash.com/photo-1533929736458-ca588d08c8be?q=80&w=800',
             author: 'Kavita Bhatt',
             date: '13 Nov 2024',
@@ -106,7 +109,7 @@ const LatestBlogs = () => {
                             viewport={{ once: true }}
                             className="text-4xl md:text-5xl font-heading font-bold text-primary mb-4"
                         >
-                            Latest Blog Posts
+                            Latest Stories
                         </motion.h2>
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
@@ -115,14 +118,14 @@ const LatestBlogs = () => {
                             transition={{ delay: 0.2 }}
                             className="text-lg text-textSecondary"
                         >
-                            Fresh stories and insights from the heart of Devbhoomi
+                            Discover the untold stories, travel guides, and cultural insights from the Land of Gods.
                         </motion.p>
                     </div>
                     <Link
                         to="/blogs"
                         className="hidden md:flex items-center space-x-2 text-accent hover:text-accent/80 font-semibold transition-colors group"
                     >
-                        <span>View All</span>
+                        <span>View All Blogs</span>
                         <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                     </Link>
                 </div>

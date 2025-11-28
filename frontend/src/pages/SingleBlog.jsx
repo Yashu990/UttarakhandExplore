@@ -20,13 +20,16 @@ import {
     ArrowRight,
 } from 'lucide-react';
 
+
+
 const SingleBlog = () => {
+    // const { t, language } = useLanguage();
     const { id } = useParams();
     const [isLiked, setIsLiked] = useState(false);
     const [isSaved, setIsSaved] = useState(false);
     const [showShareMenu, setShowShareMenu] = useState(false);
     const [linkCopied, setLinkCopied] = useState(false);
-    const [selectedLanguage, setSelectedLanguage] = useState('en');
+    // const [selectedLanguage, setSelectedLanguage] = useState(language === 'hi' ? 'hi' : 'en');
     const [comments, setComments] = useState([]);
     const [newComment, setNewComment] = useState('');
     const [commentName, setCommentName] = useState('');
@@ -44,6 +47,15 @@ const SingleBlog = () => {
         setIsSaved(savedBlogs.includes(id));
         setIsLiked(likedBlogs.includes(id));
     }, [id]);
+
+    // Update selectedLanguage when global language changes
+    // useEffect(() => {
+    //     if (language === 'hi') {
+    //         setSelectedLanguage('hi');
+    //     } else {
+    //         setSelectedLanguage('en');
+    //     }
+    // }, [language]);
 
     // Sample blog data (in real app, this would come from API)
     const blog = {
@@ -169,7 +181,7 @@ const SingleBlog = () => {
         setCommentName('');
     };
 
-    const currentContent = blog.content[selectedLanguage] || blog.content.en;
+    const currentContent = blog.content.en;
 
     return (
         <div className="min-h-screen bg-white">
@@ -241,26 +253,26 @@ const SingleBlog = () => {
 
                     <div className="flex items-center space-x-3">
                         {/* Language Toggle */}
-                        <div className="flex bg-gray-100 rounded-full p-1">
+                        {/* <div className="flex bg-gray-100 rounded-full p-1">
                             <button
-                                onClick={() => setSelectedLanguage('en')}
+                                // onClick={() => setSelectedLanguage('en')}
                                 className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${selectedLanguage === 'en'
-                                        ? 'bg-white text-primary shadow-sm'
-                                        : 'text-textSecondary hover:text-primary'
+                                    ? 'bg-white text-primary shadow-sm'
+                                    : 'text-textSecondary hover:text-primary'
                                     }`}
                             >
                                 EN
                             </button>
                             <button
-                                onClick={() => setSelectedLanguage('hi')}
+                                // onClick={() => setSelectedLanguage('hi')}
                                 className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${selectedLanguage === 'hi'
-                                        ? 'bg-white text-primary shadow-sm'
-                                        : 'text-textSecondary hover:text-primary'
+                                    ? 'bg-white text-primary shadow-sm'
+                                    : 'text-textSecondary hover:text-primary'
                                     }`}
                             >
                                 हिं
                             </button>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 
@@ -270,8 +282,8 @@ const SingleBlog = () => {
                         <button
                             onClick={handleLike}
                             className={`flex items-center space-x-2 px-5 py-2.5 rounded-full font-medium transition-all ${isLiked
-                                    ? 'bg-red-50 text-red-600 hover:bg-red-100'
-                                    : 'bg-gray-100 text-textPrimary hover:bg-gray-200'
+                                ? 'bg-red-50 text-red-600 hover:bg-red-100'
+                                : 'bg-gray-100 text-textPrimary hover:bg-gray-200'
                                 }`}
                         >
                             <Heart className={`h-5 w-5 ${isLiked ? 'fill-current' : ''}`} />
@@ -281,8 +293,8 @@ const SingleBlog = () => {
                         <button
                             onClick={handleSave}
                             className={`flex items-center space-x-2 px-5 py-2.5 rounded-full font-medium transition-all ${isSaved
-                                    ? 'bg-accent/10 text-accent hover:bg-accent/20'
-                                    : 'bg-gray-100 text-textPrimary hover:bg-gray-200'
+                                ? 'bg-accent/10 text-accent hover:bg-accent/20'
+                                : 'bg-gray-100 text-textPrimary hover:bg-gray-200'
                                 }`}
                         >
                             <Bookmark className={`h-5 w-5 ${isSaved ? 'fill-current' : ''}`} />
@@ -337,7 +349,7 @@ const SingleBlog = () => {
                     </div>
 
                     <div className="text-sm text-textSecondary">
-                        {blog.views} views
+                        {blog.views} Views
                     </div>
                 </div>
 
@@ -396,7 +408,7 @@ const SingleBlog = () => {
                             </h4>
                             <p className="text-textSecondary mb-4">{blog.author.bio}</p>
                             <button className="text-primary font-semibold hover:text-primary/80 transition-colors">
-                                View all posts →
+                                View All Posts →
                             </button>
                         </div>
                     </div>
@@ -414,7 +426,7 @@ const SingleBlog = () => {
                         <div className="mb-4">
                             <input
                                 type="text"
-                                placeholder="Your name"
+                                placeholder="Your Name"
                                 value={commentName}
                                 onChange={(e) => setCommentName(e.target.value)}
                                 className="w-full px-4 py-3 bg-white rounded-xl border border-gray-200 focus:border-primary focus:outline-none transition-colors"

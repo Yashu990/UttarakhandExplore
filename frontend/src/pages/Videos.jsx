@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, Eye, ThumbsUp, Clock, Filter } from 'lucide-react';
 
+
 const Videos = () => {
+    // const { t } = useLanguage();
     const [selectedFilter, setSelectedFilter] = useState('All');
 
     const filters = ['All', 'Travel', 'Temples', 'Stories'];
@@ -11,8 +13,8 @@ const Videos = () => {
     const videos = [
         {
             id: 1,
-            title: 'Kedarnath Trek: A Spiritual Journey',
-            description: 'Experience the divine pilgrimage to one of the holiest shrines in the Himalayas. Witness breathtaking mountain views and spiritual devotion.',
+            title: 'Divine Kedarnath Yatra',
+            description: 'Experience the spiritual journey to one of the holiest shrines in the Himalayas.',
             youtubeId: 'dQw4w9WgXcQ', // Replace with actual YouTube video ID
             category: 'Temples',
             duration: '12:45',
@@ -23,7 +25,7 @@ const Videos = () => {
         {
             id: 2,
             title: 'Hidden Waterfalls of Uttarakhand',
-            description: 'Discover the most spectacular and lesser-known waterfalls tucked away in the valleys. A journey through pristine nature.',
+            description: 'Discover the untouched beauty of cascading waterfalls in the deep forests.',
             youtubeId: 'dQw4w9WgXcQ',
             category: 'Travel',
             duration: '15:20',
@@ -33,8 +35,8 @@ const Videos = () => {
         },
         {
             id: 3,
-            title: 'Local Stories: Village Life in Kumaon',
-            description: 'Meet the people who call the mountains home. Hear their stories, traditions, and way of life that has remained unchanged for generations.',
+            title: 'Life in a Himalayan Village',
+            description: 'A glimpse into the simple and peaceful life of the mountain people.',
             youtubeId: 'dQw4w9WgXcQ',
             category: 'Stories',
             duration: '18:30',
@@ -44,8 +46,8 @@ const Videos = () => {
         },
         {
             id: 4,
-            title: 'Valley of Flowers in Full Bloom',
-            description: 'A visual treat showcasing the mesmerizing carpet of alpine flowers in one of the most beautiful national parks in the world.',
+            title: 'Valley of Flowers Trek',
+            description: 'Trekking through the UNESCO World Heritage site in full bloom.',
             youtubeId: 'dQw4w9WgXcQ',
             category: 'Travel',
             duration: '10:15',
@@ -55,8 +57,8 @@ const Videos = () => {
         },
         {
             id: 5,
-            title: 'Char Dham Yatra Complete Guide',
-            description: 'A comprehensive visual guide to the sacred Char Dham pilgrimage. Everything you need to know before you embark on this spiritual journey.',
+            title: 'Complete Char Dham Yatra Guide',
+            description: 'Everything you need to know before planning your pilgrimage.',
             youtubeId: 'dQw4w9WgXcQ',
             category: 'Temples',
             duration: '22:10',
@@ -66,8 +68,8 @@ const Videos = () => {
         },
         {
             id: 6,
-            title: 'Folklore and Legends of Garhwal',
-            description: 'Dive deep into the ancient myths and legends that have shaped the culture of Garhwal. Stories passed down through countless generations.',
+            title: 'Legends of the Hills',
+            description: 'Fascinating stories and folklore passed down through generations.',
             youtubeId: 'dQw4w9WgXcQ',
             category: 'Stories',
             duration: '14:55',
@@ -77,8 +79,8 @@ const Videos = () => {
         },
         {
             id: 7,
-            title: 'Rishikesh: Yoga Capital of the World',
-            description: 'Explore the spiritual city on the banks of the Ganges. From ancient ashrams to adventure sports, Rishikesh has it all.',
+            title: 'Rishikesh: Yoga Capital',
+            description: 'Exploring the spiritual and adventure hub of Uttarakhand.',
             youtubeId: 'dQw4w9WgXcQ',
             category: 'Travel',
             duration: '16:40',
@@ -88,8 +90,8 @@ const Videos = () => {
         },
         {
             id: 8,
-            title: 'Badrinath Temple: Divine Architecture',
-            description: 'An in-depth look at the architecture, rituals, and spiritual significance of the Badrinath temple, one of the Char Dham shrines.',
+            title: 'Badrinath Temple History',
+            description: 'The ancient history and significance of the Badrinath shrine.',
             youtubeId: 'dQw4w9WgXcQ',
             category: 'Temples',
             duration: '11:25',
@@ -99,8 +101,8 @@ const Videos = () => {
         },
         {
             id: 9,
-            title: 'Traditional Kumaoni Cuisine',
-            description: 'Watch as local chefs prepare authentic Kumaoni dishes using traditional methods and locally sourced ingredients.',
+            title: 'Traditional Pahadi Cuisine',
+            description: 'Cooking and tasting the authentic flavors of Uttarakhand.',
             youtubeId: 'dQw4w9WgXcQ',
             category: 'Stories',
             duration: '13:50',
@@ -147,16 +149,15 @@ const Videos = () => {
                             className="inline-block mb-6"
                         >
                             <span className="px-6 py-2 bg-accent/90 backdrop-blur-sm text-white rounded-full text-sm font-medium shadow-lg">
-                                🎥 Visual Stories
+                                🎥 Video Gallery
                             </span>
                         </motion.div>
 
                         <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6">
-                            Video Gallery
+                            Experience Uttarakhand
                         </h1>
                         <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-                            Experience Uttarakhand through our curated collection of videos. From sacred temples to
-                            hidden trails, every frame tells a story.
+                            Watch stunning videos of landscapes, culture, and spiritual journeys.
                         </p>
                     </motion.div>
                 </div>
@@ -168,7 +169,7 @@ const Videos = () => {
                     <div className="flex items-center space-x-3">
                         <Filter className="h-5 w-5 text-primary" />
                         <h2 className="text-xl font-heading font-semibold text-textPrimary">
-                            Filter by Category
+                            Filter Videos
                         </h2>
                     </div>
 
@@ -178,8 +179,8 @@ const Videos = () => {
                                 key={filter}
                                 onClick={() => setSelectedFilter(filter)}
                                 className={`px-5 py-2.5 rounded-full font-medium transition-all ${selectedFilter === filter
-                                        ? 'bg-primary text-white shadow-lg'
-                                        : 'bg-white text-textPrimary hover:bg-primary/10 hover:text-primary shadow-md'
+                                    ? 'bg-primary text-white shadow-lg'
+                                    : 'bg-white text-textPrimary hover:bg-primary/10 hover:text-primary shadow-md'
                                     }`}
                             >
                                 {filter}
@@ -192,7 +193,7 @@ const Videos = () => {
                 <div className="mb-8">
                     <p className="text-textSecondary">
                         Showing <span className="font-semibold text-textPrimary">{filteredVideos.length}</span>{' '}
-                        {filteredVideos.length === 1 ? 'video' : 'videos'}
+                        {filteredVideos.length === 1 ? 'Video' : 'Videos'}
                     </p>
                 </div>
 
@@ -283,7 +284,7 @@ const Videos = () => {
                             No videos found
                         </h3>
                         <p className="text-textSecondary">
-                            Try selecting a different category to see more videos
+                            Try selecting a different category.
                         </p>
                     </div>
                 )}
@@ -308,11 +309,10 @@ const Videos = () => {
                             <Play className="h-12 w-12" />
                         </div>
                         <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-                            Subscribe to Our Channel
+                            Want to see more?
                         </h2>
                         <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-                            Don't miss out on new videos! Subscribe to get notified when we upload new content
-                            about Uttarakhand's beauty and culture.
+                            Subscribe to our YouTube channel for weekly updates and travel guides.
                         </p>
                         <a
                             href="https://youtube.com"
@@ -321,7 +321,7 @@ const Videos = () => {
                             className="inline-flex items-center space-x-2 px-8 py-4 bg-accent hover:bg-accent/90 text-white rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-xl"
                         >
                             <Play className="h-5 w-5" fill="currentColor" />
-                            <span>Subscribe on YouTube</span>
+                            <span>Visit Channel</span>
                         </a>
                     </div>
                 </motion.div>

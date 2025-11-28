@@ -3,11 +3,14 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Play, Eye, ThumbsUp, Clock } from 'lucide-react';
 
+
+
 const VideosPreview = () => {
+    // const { t } = useLanguage();
     const videos = [
         {
             id: 1,
-            title: 'Kedarnath Trek: A Spiritual Adventure',
+            title: 'Divine Kedarnath Yatra',
             thumbnail: 'https://images.unsplash.com/photo-1609137144813-7d9921338f24?q=80&w=800',
             duration: '12:45',
             views: '45K',
@@ -15,7 +18,7 @@ const VideosPreview = () => {
         },
         {
             id: 2,
-            title: 'Street Food Tour of Dehradun',
+            title: 'Hidden Waterfalls of Uttarakhand',
             thumbnail: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=800',
             duration: '8:30',
             views: '32K',
@@ -23,7 +26,7 @@ const VideosPreview = () => {
         },
         {
             id: 3,
-            title: 'Wildlife of Jim Corbett National Park',
+            title: 'Life in a Himalayan Village',
             thumbnail: 'https://images.unsplash.com/photo-1549366021-9f761d450615?q=80&w=800',
             duration: '15:20',
             views: '67K',
@@ -31,7 +34,7 @@ const VideosPreview = () => {
         },
         {
             id: 4,
-            title: 'Valley of Flowers in Full Bloom',
+            title: 'Valley of Flowers Trek',
             thumbnail: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=800',
             duration: '10:15',
             views: '89K',
@@ -51,7 +54,7 @@ const VideosPreview = () => {
                             viewport={{ once: true }}
                             className="text-4xl md:text-5xl font-heading font-bold text-primary mb-4"
                         >
-                            Video Gallery
+                            Experience Uttarakhand
                         </motion.h2>
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
@@ -60,14 +63,14 @@ const VideosPreview = () => {
                             transition={{ delay: 0.2 }}
                             className="text-lg text-textSecondary"
                         >
-                            Experience Uttarakhand through our curated video content
+                            Watch stunning videos of landscapes, culture, and spiritual journeys.
                         </motion.p>
                     </div>
                     <Link
                         to="/videos"
                         className="hidden md:flex items-center space-x-2 text-accent hover:text-accent/80 font-semibold transition-colors group"
                     >
-                        <span>Watch All</span>
+                        <span>Watch All Videos</span>
                         <Play className="h-5 w-5 group-hover:scale-110 transition-transform" />
                     </Link>
                 </div>

@@ -3,33 +3,36 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Mountain, TreePine, Sunrise, Camera } from 'lucide-react';
 
+
+
 const ExploreSection = () => {
+    // const { t } = useLanguage();
     const highlights = [
         {
             id: 1,
             title: 'Majestic Peaks',
-            description: 'Witness the grandeur of Nanda Devi, Trishul, and countless other Himalayan giants',
+            description: 'Home to Nanda Devi, Trishul, and Panchachuli peaks.',
             icon: Mountain,
             color: 'from-blue-500 to-cyan-600',
         },
         {
             id: 2,
             title: 'Dense Forests',
-            description: 'Explore pristine oak, pine, and deodar forests teeming with wildlife',
+            description: 'Rich biodiversity in Corbett and Rajaji National Parks.',
             icon: TreePine,
             color: 'from-green-500 to-emerald-600',
         },
         {
             id: 3,
-            title: 'Scenic Sunrises',
-            description: 'Experience magical dawn views from hill stations like Mussoorie and Nainital',
+            title: 'Magical Sunrises',
+            description: 'Witness golden hues over the snow-capped Himalayas.',
             icon: Sunrise,
             color: 'from-orange-500 to-yellow-600',
         },
         {
             id: 4,
-            title: 'Photography Paradise',
-            description: 'Capture stunning landscapes, vibrant culture, and rare wildlife moments',
+            title: 'Photography',
+            description: 'Capture the untouched beauty of nature and culture.',
             icon: Camera,
             color: 'from-purple-500 to-pink-600',
         },
@@ -46,7 +49,7 @@ const ExploreSection = () => {
                         viewport={{ once: true }}
                         className="text-4xl md:text-5xl font-heading font-bold text-primary mb-4"
                     >
-                        Explore Uttarakhand
+                        Explore the Unexplored
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -55,8 +58,7 @@ const ExploreSection = () => {
                         transition={{ delay: 0.2 }}
                         className="text-lg text-textSecondary max-w-3xl mx-auto"
                     >
-                        From snow-capped mountains to lush valleys, from ancient temples to thrilling adventures,
-                        Uttarakhand offers experiences that stay with you forever
+                        From snow-capped peaks to lush green valleys, Uttarakhand offers a diverse landscape for every traveler.
                     </motion.p>
                 </div>
 
@@ -103,10 +105,10 @@ const ExploreSection = () => {
 
                     <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
                         <h3 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-                            Ready to Start Your Journey?
+                            Ready to start your journey?
                         </h3>
                         <p className="text-white/90 text-lg mb-6 max-w-2xl">
-                            Discover hidden trails, sacred sites, and unforgettable experiences in the Land of Gods
+                            Plan your trip to the Land of Gods and experience the magic yourself.
                         </p>
                         <Link
                             to="/about"

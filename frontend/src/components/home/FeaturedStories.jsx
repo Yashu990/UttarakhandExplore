@@ -73,7 +73,7 @@ const FeaturedStories = () => {
                         transition={{ delay: 0.2 }}
                         className="text-lg text-textSecondary max-w-2xl mx-auto"
                     >
-                        Handpicked stories that capture the essence of Uttarakhand
+                        Dive deep into our most captivating stories, featuring hidden gems, spiritual journeys, and local experiences.
                     </motion.p>
                 </div>
 
@@ -195,8 +195,8 @@ const FeaturedStories = () => {
                                     key={index}
                                     onClick={() => setCurrentSlide(index)}
                                     className={`transition-all ${index === currentSlide
-                                            ? 'w-12 h-2 bg-white'
-                                            : 'w-2 h-2 bg-white/50 hover:bg-white/80'
+                                        ? 'w-12 h-2 bg-white'
+                                        : 'w-2 h-2 bg-white/50 hover:bg-white/80'
                                         } rounded-full`}
                                 />
                             ))}

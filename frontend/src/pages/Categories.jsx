@@ -5,7 +5,6 @@ import {
     Landmark,
     Mountain,
     MapPin,
-    Coffee,
     History as HistoryIcon,
     PartyPopper,
     Compass,
@@ -14,97 +13,100 @@ import {
     Tent,
 } from 'lucide-react';
 
+
 const Categories = () => {
+    // const { t } = useLanguage();
+
     const categories = [
         {
             id: 1,
-            title: 'Culture',
-            description: 'Explore the rich cultural heritage and traditions',
+            title: 'Culture & Heritage',
+            description: 'Explore the rich traditions, art, and customs of Uttarakhand.',
             icon: Landmark,
             color: 'from-purple-500 to-indigo-600',
             image: 'https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=800',
-            count: '24 articles',
+            count: '24 Articles',
         },
         {
             id: 2,
-            title: 'History',
-            description: 'Ancient stories and historical landmarks',
+            title: 'History & Mythology',
+            description: 'Dive into the ancient past and legendary tales of the land.',
             icon: HistoryIcon,
             color: 'from-amber-500 to-yellow-600',
             image: 'https://images.unsplash.com/photo-1604580864840-e4504fec7e12?q=80&w=800',
-            count: '18 articles',
+            count: '18 Articles',
         },
         {
             id: 3,
-            title: 'Festivals',
-            description: 'Vibrant celebrations and local festivities',
+            title: 'Fairs & Festivals',
+            description: 'Experience the vibrant celebrations and gatherings of the hills.',
             icon: PartyPopper,
             color: 'from-pink-500 to-rose-600',
             image: 'https://images.unsplash.com/photo-1533929736458-ca588d08c8be?q=80&w=800',
-            count: '15 articles',
+            count: '15 Articles',
         },
         {
             id: 4,
-            title: 'Temples',
-            description: 'Sacred shrines and spiritual destinations',
+            title: 'Temples & Shrines',
+            description: 'Visit the sacred abodes of gods and goddesses.',
             icon: Landmark,
             color: 'from-orange-500 to-red-600',
             image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=800',
-            count: '32 articles',
+            count: '32 Articles',
         },
         {
             id: 5,
             title: 'Char Dham Yatra',
-            description: 'The sacred pilgrimage to four holy shrines',
+            description: 'A spiritual journey to the four holy shrines of the Himalayas.',
             icon: Mountain,
             color: 'from-teal-500 to-cyan-600',
             image: 'https://images.unsplash.com/photo-1609137144813-7d9921338f24?q=80&w=800',
-            count: '28 articles',
+            count: '28 Articles',
         },
         {
             id: 6,
             title: 'Places to Visit',
-            description: 'Must-see destinations and tourist spots',
+            description: 'Discover the must-visit destinations and tourist hotspots.',
             icon: Compass,
             color: 'from-blue-500 to-indigo-600',
             image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800',
-            count: '45 articles',
+            count: '45 Articles',
         },
         {
             id: 7,
-            title: 'Hidden Places',
-            description: 'Unexplored gems off the beaten path',
+            title: 'Hidden Gems',
+            description: 'Uncover the secret and unexplored beauty of Uttarakhand.',
             icon: MapPin,
             color: 'from-green-500 to-emerald-600',
             image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=800',
-            count: '21 articles',
+            count: '21 Articles',
         },
         {
             id: 8,
-            title: 'Adventure',
-            description: 'Thrilling activities and outdoor experiences',
+            title: 'Adventure & Trekking',
+            description: 'Embark on thrilling adventures and scenic treks.',
             icon: Tent,
             color: 'from-red-500 to-orange-600',
             image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=800',
-            count: '37 articles',
+            count: '37 Articles',
         },
         {
             id: 9,
-            title: 'Food',
-            description: 'Authentic local cuisine and culinary delights',
+            title: 'Food & Cuisine',
+            description: 'Savor the authentic flavors and local delicacies.',
             icon: UtensilsCrossed,
             color: 'from-yellow-500 to-amber-600',
             image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=800',
-            count: '26 articles',
+            count: '26 Articles',
         },
         {
             id: 10,
             title: 'Local Stories',
-            description: 'Personal narratives and community tales',
+            description: 'Read heartwarming stories from the locals.',
             icon: BookOpen,
             color: 'from-violet-500 to-purple-600',
             image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=800',
-            count: '19 articles',
+            count: '19 Articles',
         },
     ];
 
@@ -140,16 +142,15 @@ const Categories = () => {
                             className="inline-block mb-6"
                         >
                             <span className="px-6 py-2 bg-accent/90 backdrop-blur-sm text-white rounded-full text-sm font-medium shadow-lg">
-                                📚 Explore by Topic
+                                📚 Explore Categories
                             </span>
                         </motion.div>
 
                         <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6">
-                            Browse Categories
+                            Discover Uttarakhand
                         </h1>
                         <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-                            Discover stories organized by topics that interest you. From ancient temples to modern adventures,
-                            we've got something for everyone.
+                            Browse through our curated collection of articles across various themes.
                         </p>
 
                         <motion.div
@@ -182,7 +183,21 @@ const Categories = () => {
                 >
                     {categories.map((category) => {
                         const IconComponent = category.icon;
-                        const categorySlug = category.title.toLowerCase().replace(/\s+/g, '-');
+                        // Use a fixed slug for routing to ensure URLs don't change with language
+                        // Map category IDs to English slugs
+                        const slugMap = {
+                            1: 'culture',
+                            2: 'history',
+                            3: 'festivals',
+                            4: 'temples',
+                            5: 'char-dham-yatra',
+                            6: 'places-to-visit',
+                            7: 'hidden-places',
+                            8: 'adventure',
+                            9: 'food',
+                            10: 'local-stories'
+                        };
+                        const categorySlug = slugMap[category.id];
 
                         return (
                             <motion.div key={category.id} variants={item}>
@@ -267,10 +282,10 @@ const Categories = () => {
 
                     <div className="relative z-10">
                         <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-                            Can't Find What You're Looking For?
+                            Can't decide where to start?
                         </h2>
                         <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-                            Browse all our blog posts or use the search feature to find exactly what you need
+                            Check out our latest blog posts for inspiration.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <Link

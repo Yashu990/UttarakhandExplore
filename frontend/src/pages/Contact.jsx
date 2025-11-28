@@ -15,7 +15,10 @@ import {
     CheckCircle,
 } from 'lucide-react';
 
+
+
 const Contact = () => {
+    // const { t } = useLanguage();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -78,7 +81,7 @@ const Contact = () => {
         {
             icon: Clock,
             title: 'Working Hours',
-            info: 'Mon - Fri: 9 AM - 6 PM',
+            info: 'Mon - Fri: 9AM - 6PM',
             link: null,
             color: 'from-purple-500 to-indigo-600',
         },
@@ -114,10 +117,10 @@ const Contact = () => {
                         </motion.div>
 
                         <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6">
-                            Contact Us
+                            We'd Love to Hear from You
                         </h1>
                         <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-                            Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+                            Whether you have a question about a destination, want to share your story, or just want to say hello, we're here for you.
                         </p>
                     </motion.div>
                 </div>
@@ -178,7 +181,7 @@ const Contact = () => {
                                     <MessageSquare className="h-6 w-6 text-primary" />
                                 </div>
                                 <h2 className="text-3xl font-heading font-bold text-textPrimary">
-                                    Send Message
+                                    Send us a Message
                                 </h2>
                             </div>
 
@@ -190,13 +193,13 @@ const Contact = () => {
                                 >
                                     <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
                                     <h3 className="text-2xl font-bold text-textPrimary mb-2">Message Sent!</h3>
-                                    <p className="text-textSecondary">We'll get back to you soon.</p>
+                                    <p className="text-textSecondary">Thank you for contacting us. We'll get back to you shortly.</p>
                                 </motion.div>
                             ) : (
                                 <form onSubmit={handleContactSubmit} className="space-y-6">
                                     <div>
                                         <label className="block text-sm font-medium text-textPrimary mb-2">
-                                            Your Name *
+                                            Your Name
                                         </label>
                                         <input
                                             type="text"
@@ -210,7 +213,7 @@ const Contact = () => {
 
                                     <div>
                                         <label className="block text-sm font-medium text-textPrimary mb-2">
-                                            Email Address *
+                                            Email Address
                                         </label>
                                         <input
                                             type="email"
@@ -224,7 +227,7 @@ const Contact = () => {
 
                                     <div>
                                         <label className="block text-sm font-medium text-textPrimary mb-2">
-                                            Subject *
+                                            Subject
                                         </label>
                                         <input
                                             type="text"
@@ -238,7 +241,7 @@ const Contact = () => {
 
                                     <div>
                                         <label className="block text-sm font-medium text-textPrimary mb-2">
-                                            Message *
+                                            Message
                                         </label>
                                         <textarea
                                             required
@@ -274,7 +277,7 @@ const Contact = () => {
                                     <MessageSquare className="h-6 w-6 text-accent" />
                                 </div>
                                 <h2 className="text-3xl font-heading font-bold text-textPrimary">
-                                    Share Feedback
+                                    Share Your Feedback
                                 </h2>
                             </div>
 
@@ -286,13 +289,13 @@ const Contact = () => {
                                 >
                                     <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
                                     <h3 className="text-2xl font-bold text-textPrimary mb-2">Thank You!</h3>
-                                    <p className="text-textSecondary">Your feedback helps us improve.</p>
+                                    <p className="text-textSecondary">We appreciate your feedback. It helps us improve.</p>
                                 </motion.div>
                             ) : (
                                 <form onSubmit={handleFeedbackSubmit} className="space-y-6">
                                     <div>
                                         <label className="block text-sm font-medium text-textPrimary mb-2">
-                                            Your Name
+                                            Name (Optional)
                                         </label>
                                         <input
                                             type="text"
@@ -305,7 +308,7 @@ const Contact = () => {
 
                                     <div>
                                         <label className="block text-sm font-medium text-textPrimary mb-2">
-                                            Email
+                                            Email (Optional)
                                         </label>
                                         <input
                                             type="email"
@@ -336,7 +339,7 @@ const Contact = () => {
 
                                     <div>
                                         <label className="block text-sm font-medium text-textPrimary mb-2">
-                                            Your Feedback *
+                                            Your Feedback
                                         </label>
                                         <textarea
                                             required
@@ -344,7 +347,7 @@ const Contact = () => {
                                             value={feedbackData.feedback}
                                             onChange={(e) => setFeedbackData({ ...feedbackData, feedback: e.target.value })}
                                             className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all resize-none"
-                                            placeholder="Tell us what you think..."
+                                            placeholder="What did you like or dislike?"
                                         />
                                     </div>
 
@@ -362,7 +365,7 @@ const Contact = () => {
                         {/* Social Links */}
                         <div className="bg-white rounded-3xl shadow-xl p-8">
                             <h3 className="text-2xl font-heading font-bold text-textPrimary mb-6">
-                                Follow Us
+                                {t('contactPage.social')}
                             </h3>
                             <div className="flex items-center justify-center space-x-4">
                                 {socialLinks.map((social, index) => {
@@ -395,10 +398,10 @@ const Contact = () => {
                     <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
                         <div className="p-8 pb-0">
                             <h2 className="text-3xl font-heading font-bold text-textPrimary mb-2">
-                                Find Us
+                                Find Us on Map
                             </h2>
                             <p className="text-textSecondary mb-6">
-                                Located in the heart of Dehradun, Uttarakhand
+                                Visit our office in the heart of Dehradun.
                             </p>
                         </div>
                         <div className="h-96 w-full">

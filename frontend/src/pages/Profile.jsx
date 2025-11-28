@@ -15,13 +15,16 @@ import {
     Clock,
 } from 'lucide-react';
 
+
+
 const Profile = () => {
+    // const { t } = useLanguage();
     const navigate = useNavigate();
     const [activeTab, setActiveTab] = useState('profile');
     const [user, setUser] = useState(null);
     const [savedBlogs, setSavedBlogs] = useState([]);
     const [likedBlogs, setLikedBlogs] = useState([]);
-    const [language, setLanguage] = useState('en');
+    // const [language, setLanguage] = useState('en');
 
     useEffect(() => {
         // Check if user is authenticated
@@ -44,8 +47,8 @@ const Profile = () => {
         setLikedBlogs(liked);
 
         // Load language preference
-        const lang = localStorage.getItem('language') || 'en';
-        setLanguage(lang);
+        // const lang = localStorage.getItem('language') || 'en';
+        // setLanguage(lang);
     }, [navigate]);
 
     const handleLogout = () => {
@@ -58,10 +61,10 @@ const Profile = () => {
         navigate('/');
     };
 
-    const handleLanguageChange = (newLang) => {
-        setLanguage(newLang);
-        localStorage.setItem('language', newLang);
-    };
+    // const handleLanguageChange = (newLang) => {
+    //     setLanguage(newLang);
+    //     localStorage.setItem('language', newLang);
+    // };
 
     const removeSavedBlog = (blogId) => {
         const updated = savedBlogs.filter((blog) => blog.id !== blogId);
@@ -79,7 +82,7 @@ const Profile = () => {
         { id: 'profile', label: 'Profile Info', icon: User },
         { id: 'saved', label: 'Saved Blogs', icon: Bookmark },
         { id: 'liked', label: 'Liked Blogs', icon: Heart },
-        { id: 'language', label: 'Language', icon: Globe },
+        // { id: 'language', label: 'Language', icon: Globe },
         { id: 'logout', label: 'Logout', icon: LogOut },
     ];
 
@@ -161,8 +164,8 @@ const Profile = () => {
                                                 }
                                             }}
                                             className={`w-full flex items-center justify-between px-4 py-3 rounded-xl transition-all ${isActive
-                                                    ? 'bg-gradient-to-r from-primary to-accent text-white shadow-md'
-                                                    : 'text-textSecondary hover:bg-gray-100'
+                                                ? 'bg-gradient-to-r from-primary to-accent text-white shadow-md'
+                                                : 'text-textSecondary hover:bg-gray-100'
                                                 }`}
                                         >
                                             <div className="flex items-center space-x-3">
@@ -276,17 +279,17 @@ const Profile = () => {
                                                 <Heart className="h-8 w-8 text-red-500/50" />
                                             </div>
                                         </div>
-                                        <div className="bg-gradient-to-br from-accent/10 to-accent/5 rounded-xl p-4">
+                                        {/* <div className="bg-gradient-to-br from-accent/10 to-accent/5 rounded-xl p-4">
                                             <div className="flex items-center justify-between">
                                                 <div>
                                                     <p className="text-sm text-textSecondary">Language</p>
                                                     <p className="text-2xl font-bold text-accent">
-                                                        {languages.find((l) => l.code === language)?.flag || '🌐'}
+                                                        🇬🇧
                                                     </p>
                                                 </div>
                                                 <Globe className="h-8 w-8 text-accent/50" />
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </motion.div>
                             )}
@@ -306,7 +309,7 @@ const Profile = () => {
                                     {savedBlogs.length === 0 ? (
                                         <div className="text-center py-16">
                                             <Bookmark className="h-16 w-16 text-gray-300 mx-auto mb-4" />
-                                            <p className="text-textSecondary text-lg">No saved blogs yet</p>
+                                            <p className="text-textSecondary text-lg">You haven't saved any blogs yet.</p>
                                             <Link
                                                 to="/blogs"
                                                 className="inline-block mt-4 px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
@@ -365,7 +368,7 @@ const Profile = () => {
                                     {likedBlogs.length === 0 ? (
                                         <div className="text-center py-16">
                                             <Heart className="h-16 w-16 text-gray-300 mx-auto mb-4" />
-                                            <p className="text-textSecondary text-lg">No liked blogs yet</p>
+                                            <p className="text-textSecondary text-lg">You haven't liked any blogs yet.</p>
                                             <Link
                                                 to="/blogs"
                                                 className="inline-block mt-4 px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
@@ -409,7 +412,7 @@ const Profile = () => {
                                 </motion.div>
                             )}
 
-                            {activeTab === 'language' && (
+                            {/* {activeTab === 'language' && (
                                 <motion.div
                                     key="language"
                                     initial={{ opacity: 0, x: 20 }}
@@ -421,24 +424,24 @@ const Profile = () => {
                                         Language Preference
                                     </h2>
                                     <p className="text-textSecondary mb-8">
-                                        Choose your preferred language for the blog content
+                                        Choose your preferred language for the interface.
                                     </p>
 
                                     <div className="space-y-4">
                                         {languages.map((lang) => (
                                             <button
                                                 key={lang.code}
-                                                onClick={() => handleLanguageChange(lang.code)}
+                                                // onClick={() => handleLanguageChange(lang.code)}
                                                 className={`w-full flex items-center justify-between p-6 rounded-xl border-2 transition-all ${language === lang.code
-                                                        ? 'border-primary bg-primary/5 shadow-md'
-                                                        : 'border-gray-200 hover:border-primary/50 hover:bg-gray-50'
+                                                    ? 'border-primary bg-primary/5 shadow-md'
+                                                    : 'border-gray-200 hover:border-primary/50 hover:bg-gray-50'
                                                     }`}
                                             >
                                                 <div className="flex items-center space-x-4">
                                                     <span className="text-4xl">{lang.flag}</span>
                                                     <div className="text-left">
                                                         <p className="text-lg font-semibold text-textPrimary">{lang.name}</p>
-                                                        <p className="text-sm text-textSecondary">Language Code: {lang.code}</p>
+                                                        <p className="text-sm text-textSecondary">Code: {lang.code}</p>
                                                     </div>
                                                 </div>
                                                 {language === lang.code && (
@@ -452,12 +455,11 @@ const Profile = () => {
 
                                     <div className="mt-8 p-4 bg-blue-50 border border-blue-200 rounded-xl">
                                         <p className="text-sm text-blue-800">
-                                            <strong>Note:</strong> Your language preference is saved locally and will be used
-                                            to display content in your preferred language when available.
+                                            <strong>Note:</strong> Changing language will update all text across the application.
                                         </p>
                                     </div>
                                 </motion.div>
-                            )}
+                            )} */}
                         </AnimatePresence>
                     </div>
                 </div>

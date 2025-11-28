@@ -13,23 +13,26 @@ import {
     BookOpen,
 } from 'lucide-react';
 
+
+
 const AboutUttarakhand = () => {
+    // const { t } = useLanguage();
     const sections = [
         {
             id: 'history',
-            title: 'Rich History',
+            title: 'History',
             icon: BookOpen,
             color: 'from-amber-500 to-orange-600',
             image: 'https://images.unsplash.com/photo-1604580864840-e4504fec7e12?q=80&w=800',
-            content: `Uttarakhand, often referred to as "Devbhoomi" or the Land of Gods, has a rich and diverse history dating back to ancient times. The region finds mention in Hindu scriptures and epics, including the Mahabharata and Ramayana. Historically, it was part of the Kuru and Panchala kingdoms. The region saw the rise of powerful dynasties like the Katyuris in the 7th century and the Chand dynasty in the medieval period. British colonial rule brought significant changes, and after India's independence, Uttarakhand was initially part of Uttar Pradesh before becoming a separate state on November 9, 2000.`,
+            content: 'Uttarakhand has a long and rich history, dating back to the Vedic age. It has been ruled by various dynasties, including the Katyuris, Chands, and Parmars. The region played a significant role in the Indian independence movement and was carved out of Uttar Pradesh as a separate state in 2000.',
         },
         {
             id: 'culture',
-            title: 'Vibrant Culture',
+            title: 'Culture & Traditions',
             icon: Palette,
             color: 'from-purple-500 to-pink-600',
             image: 'https://images.unsplash.com/photo-1533929736458-ca588d08c8be?q=80&w=800',
-            content: `The culture of Uttarakhand is a beautiful tapestry woven from ancient traditions, folk arts, and spiritual practices. The people celebrate numerous festivals with great enthusiasm, including Makar Sankranti, Phool Dei, and Harela. Traditional dance forms like Langvir Nritya, Barada Nati, and Pandav Nritya showcase the region's artistic heritage. Music is an integral part of life, with folk songs passed down through generations telling stories of love, nature, and daily life. The culture is deeply rooted in respect for nature and the divine, reflected in every aspect of daily life.`,
+            content: 'The culture of Uttarakhand is a vibrant blend of Kumaoni and Garhwali traditions. From colorful festivals like Harela and Phool Dei to traditional dances like Langvir Nritya and Barada Nati, the state is a treasure trove of cultural heritage.',
         },
         {
             id: 'languages',
@@ -37,15 +40,15 @@ const AboutUttarakhand = () => {
             icon: Languages,
             color: 'from-blue-500 to-cyan-600',
             image: 'https://images.unsplash.com/photo-1546412414-e1885259563a?q=80&w=800',
-            content: `Uttarakhand is linguistically diverse, with Hindi being the official language. The state is home to several regional languages and dialects that reflect its cultural richness. Garhwali and Kumaoni are the two major regional languages spoken across different parts of the state. Garhwali is predominantly spoken in the Garhwal region, while Kumaoni is prevalent in the Kumaon region. Other languages include Jaunsari and Bhotiyas dialects. Despite modernization, these languages continue to thrive, carrying forward centuries of oral traditions, folk songs, and local wisdom.`,
+            content: 'The primary languages spoken in Uttarakhand are Hindi, Garhwali, and Kumaoni. Sanskrit is also given the status of a second official language. The dialects vary from region to region, adding to the linguistic diversity of the state.',
         },
         {
             id: 'people',
-            title: 'Warm People',
+            title: 'People',
             icon: Users,
             color: 'from-green-500 to-emerald-600',
             image: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=800',
-            content: `The people of Uttarakhand, known as "Paharis" (mountain people), are renowned for their warmth, hospitality, and strong community bonds. Living in challenging mountain terrain has instilled in them resilience, hard work, and a deep connection with nature. The society is predominantly agrarian, with terrace farming being a common practice. Women play a crucial role in agriculture and household management. The people maintain strong cultural traditions while embracing progress. Their simple lifestyle, traditional values, and welcoming nature make every visitor feel at home in the mountains.`,
+            content: 'The people of Uttarakhand, known as Pahadis, are known for their simplicity, honesty, and hospitality. They live in close harmony with nature and have a deep respect for their traditions and customs.',
         },
         {
             id: 'districts',
@@ -53,44 +56,44 @@ const AboutUttarakhand = () => {
             icon: Map,
             color: 'from-red-500 to-orange-600',
             image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=800',
-            content: `Uttarakhand comprises 13 districts, each with its unique character and attractions. The state is divided into two regions: Garhwal and Kumaon. Garhwal region includes Dehradun (the capital), Haridwar, Tehri Garhwal, Uttarkashi, Chamoli, Rudraprayag, and Pauri Garhwal. The Kumaon region consists of Nainital, Almora, Pithoragarh, Bageshwar, Champawat, and Udham Singh Nagar. Each district offers diverse landscapes, from the plains of Haridwar to the snow-capped peaks of Chamoli, from the serene lakes of Nainital to the spiritual atmosphere of Haridwar.`,
+            content: 'Uttarakhand is divided into two administrative divisions: Garhwal and Kumaon. It has 13 districts, each with its unique charm and attractions. From the bustling city of Dehradun to the serene villages of Pithoragarh, every district has something to offer.',
         },
         {
             id: 'nature',
-            title: 'Respect for Nature',
+            title: 'Flora & Fauna',
             icon: TreePine,
             color: 'from-teal-500 to-green-600',
             image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800',
-            content: `Uttarakhand exemplifies the harmonious coexistence of humans and nature. The state is home to numerous national parks and wildlife sanctuaries, including Jim Corbett National Park, Valley of Flowers, and Nanda Devi Biosphere Reserve. The famous Chipko Movement originated here, where villagers hugged trees to prevent deforestation. Dense forests of oak, pine, deodar, and rhododendron cover the hillsides. The people worship nature, with many trees and forests considered sacred. Rivers like the Ganges and Yamuna originate from these mountains, making environmental conservation not just a practice but a spiritual duty.`,
+            content: 'The state is home to a diverse range of flora and fauna. It boasts of national parks like Jim Corbett and Rajaji, and the UNESCO World Heritage Site, Valley of Flowers. The rich biodiversity includes rare species like the snow leopard, musk deer, and Himalayan monal.',
         },
         {
             id: 'chardham',
-            title: 'Char Dham Yatra',
+            title: 'Char Dham',
             icon: Landmark,
             color: 'from-indigo-500 to-purple-600',
             image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=800',
-            content: `The Char Dham Yatra is one of the most sacred pilgrimages in Hinduism, comprising four holy shrines: Yamunotri, Gangotri, Kedarnath, and Badrinath. Located in the Garhwal Himalayas, these temples are believed to wash away sins and grant moksha (liberation). Yamunotri, dedicated to Goddess Yamuna, sits at 3,293 meters. Gangotri, the origin of the holy Ganges, is at 3,100 meters. Kedarnath, one of the twelve Jyotirlingas of Lord Shiva, stands at 3,583 meters. Badrinath, dedicated to Lord Vishnu, is at 3,300 meters. The yatra is undertaken between April-May and November when the temples are accessible.`,
+            content: 'Uttarakhand is known as Devbhoomi (Land of Gods) primarily because of the Char Dham Yatra. The four holy shrines of Yamunotri, Gangotri, Kedarnath, and Badrinath attract millions of pilgrims every year, seeking spiritual salvation.',
         },
         {
             id: 'food',
-            title: 'Famous Food',
+            title: 'Cuisine',
             icon: UtensilsCrossed,
             color: 'from-yellow-500 to-orange-600',
             image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=800',
-            content: `Uttarakhandi cuisine is simple yet flavorful, using locally grown ingredients and traditional cooking methods. Popular dishes include Kafuli (spinach curry), Chainsoo (black gram curry), Bhatt ki Churkani (black soybean curry), and Aloo ke Gutke (spiced potatoes). The region is famous for its variety of rotis made from different grains. Bal Mithai and Singodi are beloved sweets. Madua (finger millet) is a staple grain used in various preparations. The cuisine reflects the agricultural lifestyle and cold climate, with many dishes being highly nutritious and warming. Traditional cooking in iron utensils adds to the authentic taste.`,
+            content: 'Uttarakhandi cuisine is simple yet nutritious. Dishes like Kafuli, Phaanu, Thechwani, and Chainsoo are made with locally grown ingredients. Bal Mithai and Singori are popular sweets that you must try.',
         },
         {
             id: 'art',
-            title: 'Art & Handicraft',
+            title: 'Art & Craft',
             icon: Palette,
             color: 'from-pink-500 to-rose-600',
             image: 'https://images.unsplash.com/photo-1452860606245-08befc0ff44b?q=80&w=800',
-            content: `Uttarakhand's art and handicraft traditions are centuries old, showcasing exceptional skill and creativity. Aipan is a traditional floor and wall art using natural colors and geometric patterns. Wood carving is prominent, with intricately carved doors, windows, and temples. The region is famous for its handwoven carpets, shawls, and woolen products. Ringal (bamboo) craft produces beautiful baskets and decorative items. Metal work, particularly copper and brass utensils, is another specialty. These crafts are not just artistic expressions but also represent the cultural identity and livelihood of local artisans who have preserved these traditions through generations.`,
+            content: 'The state is famous for its wood carving, Aipan art (traditional folk art), and woolen handicrafts. The intricate designs and patterns reflect the artistic skills of the local artisans.',
         },
     ];
 
     const stats = [
-        { label: 'Year Established', value: '2000' },
+        { label: 'Established', value: '2000' },
         { label: 'Districts', value: '13' },
         { label: 'Area (sq km)', value: '53,483' },
         { label: 'Capital', value: 'Dehradun' },
@@ -121,15 +124,15 @@ const AboutUttarakhand = () => {
                             className="mb-6"
                         >
                             <span className="inline-block px-6 py-2 bg-accent/90 backdrop-blur-sm rounded-full text-white text-sm font-medium">
-                                🏔️ Devbhoomi - Land of Gods
+                                🏔️ Know Devbhoomi
                             </span>
                         </motion.div>
 
                         <h1 className="text-6xl md:text-8xl font-heading font-bold text-white mb-6">
-                            Uttarakhand
+                            About Uttarakhand
                         </h1>
                         <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
-                            Where the mountains touch the heavens and rivers flow with divine grace
+                            A land of myths and mountains, where every stone tells a story and every river sings a song.
                         </p>
 
                         {/* Stats */}
@@ -220,18 +223,17 @@ const AboutUttarakhand = () => {
                             <Heart className="h-12 w-12 text-accent" />
                         </div>
                         <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-                            Experience the Magic of Uttarakhand
+                            Experience the Magic
                         </h2>
                         <p className="text-xl text-white/90 mb-8 leading-relaxed">
-                            Plan your journey to the Land of Gods. Explore our travel guides, connect with local stories,
-                            and immerse yourself in the beauty of the Himalayas.
+                            Ready to explore the land of gods? Start your journey today.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <a
                                 href="/blogs"
                                 className="px-8 py-4 bg-accent hover:bg-accent/90 text-white rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-xl"
                             >
-                                Read Our Blogs
+                                Read Blogs
                             </a>
                             <a
                                 href="/videos"

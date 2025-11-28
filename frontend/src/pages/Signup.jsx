@@ -63,11 +63,19 @@ const Signup = () => {
         setTimeout(() => {
             // Create user object
             const user = {
+                id: Date.now().toString(), // Simple ID generation
                 name: formData.name,
                 email: formData.emailOrMobile.includes('@') ? formData.emailOrMobile : '',
                 mobile: formData.emailOrMobile.includes('@') ? '' : formData.emailOrMobile,
                 password: formData.password, // In production, never store plain passwords!
+                role: formData.isContributor ? 'contributor' : 'user',
                 createdAt: new Date().toISOString(),
+                ...(formData.isContributor && {
+                    contributorProfile: {
+                        badge: 'new',
+                        approvedStoriesCount: 0
+                    }
+                })
             };
 
             // Save to localStorage
@@ -81,8 +89,12 @@ const Signup = () => {
 
             setLoading(false);
 
-            // Redirect to home
-            navigate('/');
+            // Redirect based on role
+            if (user.role === 'contributor') {
+                navigate('/contributor/dashboard');
+            } else {
+                navigate('/profile');
+            }
         }, 1500);
     };
 
@@ -263,25 +275,6 @@ const Signup = () => {
                                 </button>
                             </div>
                         </div>
-
-                        {/* Create Account Button */}
-                        <button
-                            type="submit"
-                            disabled={loading}
-                            className="w-full flex items-center justify-center space-x-2 px-6 py-4 bg-accent hover:bg-accent/90 text-white rounded-xl font-semibold transition-all hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
-                        >
-                            {loading ? (
-                                <>
-                                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                                    <span>Creating Account...</span>
-                                </>
-                            ) : (
-                                <>
-                                    <UserPlus className="h-5 w-5" />
-                                    <span>Create Account</span>
-                                </>
-                            )}
-                        </button>
                     </form>
 
                     {/* Divider */}

@@ -3,12 +3,15 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Landmark, MapPin, Mountain, Compass } from 'lucide-react';
 
+
+
 const CharDhamSection = () => {
+    // const { t } = useLanguage();
     const charDhams = [
         {
             id: 1,
             name: 'Yamunotri',
-            description: 'Source of the holy Yamuna River',
+            description: 'The source of the holy Yamuna river and seat of Goddess Yamuna.',
             image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=800',
             altitude: '3,293m',
             icon: Mountain,
@@ -16,7 +19,7 @@ const CharDhamSection = () => {
         {
             id: 2,
             name: 'Gangotri',
-            description: 'Origin of the sacred Ganges',
+            description: 'The origin of the sacred River Ganges and seat of Goddess Ganga.',
             image: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=80&w=800',
             altitude: '3,100m',
             icon: Landmark,
@@ -24,7 +27,7 @@ const CharDhamSection = () => {
         {
             id: 3,
             name: 'Kedarnath',
-            description: 'Abode of Lord Shiva',
+            description: 'One of the twelve Jyotirlingas of Lord Shiva, amidst snow-clad peaks.',
             image: 'https://images.unsplash.com/photo-1609137144813-7d9921338f24?q=80&w=800',
             altitude: '3,583m',
             icon: Landmark,
@@ -32,7 +35,7 @@ const CharDhamSection = () => {
         {
             id: 4,
             name: 'Badrinath',
-            description: 'Temple of Lord Vishnu',
+            description: 'The abode of Lord Vishnu, situated on the banks of Alaknanda river.',
             image: 'https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=800',
             altitude: '3,300m',
             icon: Landmark,
@@ -57,7 +60,7 @@ const CharDhamSection = () => {
                         className="inline-block mb-4"
                     >
                         <span className="px-6 py-2 bg-accent rounded-full text-white text-sm font-medium">
-                            🕉️ Sacred Journey
+                            🕉️ Sacred Pilgrimage
                         </span>
                     </motion.div>
 
@@ -67,7 +70,7 @@ const CharDhamSection = () => {
                         viewport={{ once: true }}
                         className="text-4xl md:text-5xl font-heading font-bold text-white mb-6"
                     >
-                        Char Dham Yatra
+                        The Char Dham Yatra
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -76,8 +79,7 @@ const CharDhamSection = () => {
                         transition={{ delay: 0.2 }}
                         className="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed"
                     >
-                        Embark on the divine pilgrimage to the four sacred shrines nestled in the majestic Himalayas.
-                        Discover spiritual enlightenment amidst breathtaking natural beauty.
+                        Embark on a spiritual journey to the four holiest shrines in the Himalayas - Yamunotri, Gangotri, Kedarnath, and Badrinath.
                     </motion.p>
                 </div>
 

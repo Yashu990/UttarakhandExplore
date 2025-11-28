@@ -16,7 +16,10 @@ import {
     X
 } from 'lucide-react';
 
+
+
 const BlogListing = () => {
+    // const { t } = useLanguage();
     const [selectedCategory, setSelectedCategory] = useState('All');
     const [sortBy, setSortBy] = useState('newest');
     const [currentPage, setCurrentPage] = useState(1);
@@ -196,10 +199,10 @@ const BlogListing = () => {
                         className="text-center"
                     >
                         <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6">
-                            {selectedCategory === 'All' ? 'All Blog Posts' : selectedCategory}
+                            {selectedCategory === 'All' ? 'Explore Our Stories' : selectedCategory}
                         </h1>
                         <p className="text-xl text-white/90 max-w-3xl mx-auto">
-                            Explore our collection of {filteredBlogs.length} stories about Uttarakhand's beauty, culture, and heritage
+                            Discover {filteredBlogs.length} stories about the culture, nature, and people of Uttarakhand.
                         </p>
                     </motion.div>
                 </div>
@@ -215,7 +218,7 @@ const BlogListing = () => {
                             className="lg:hidden flex items-center justify-center space-x-2 px-6 py-3 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow"
                         >
                             <Filter className="h-5 w-5 text-primary" />
-                            <span className="font-semibold text-textPrimary">Filters & Sort</span>
+                            <span className="font-semibold text-textPrimary">Filters</span>
                         </button>
 
                         {/* Desktop Categories */}
@@ -228,8 +231,8 @@ const BlogListing = () => {
                                         setCurrentPage(1);
                                     }}
                                     className={`px-5 py-2.5 rounded-full font-medium transition-all ${selectedCategory === category
-                                            ? 'bg-primary text-white shadow-lg'
-                                            : 'bg-white text-textPrimary hover:bg-primary/10 hover:text-primary'
+                                        ? 'bg-primary text-white shadow-lg'
+                                        : 'bg-white text-textPrimary hover:bg-primary/10 hover:text-primary'
                                         }`}
                                 >
                                     {category}
@@ -248,8 +251,8 @@ const BlogListing = () => {
                                             key={option.value}
                                             onClick={() => setSortBy(option.value)}
                                             className={`px-4 py-2.5 flex items-center space-x-2 transition-all ${sortBy === option.value
-                                                    ? 'bg-primary text-white'
-                                                    : 'text-textPrimary hover:bg-gray-50'
+                                                ? 'bg-primary text-white'
+                                                : 'text-textPrimary hover:bg-gray-50'
                                                 }`}
                                         >
                                             <IconComponent className="h-4 w-4" />
@@ -272,7 +275,7 @@ const BlogListing = () => {
                             >
                                 <div className="flex items-center justify-between mb-4">
                                     <h3 className="text-lg font-heading font-semibold text-textPrimary">
-                                        Filters & Sort
+                                        Filters
                                     </h3>
                                     <button
                                         onClick={() => setShowFilters(false)}
@@ -294,8 +297,8 @@ const BlogListing = () => {
                                                     setCurrentPage(1);
                                                 }}
                                                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedCategory === category
-                                                        ? 'bg-primary text-white'
-                                                        : 'bg-gray-100 text-textPrimary hover:bg-primary/10'
+                                                    ? 'bg-primary text-white'
+                                                    : 'bg-gray-100 text-textPrimary hover:bg-primary/10'
                                                     }`}
                                             >
                                                 {category}
@@ -315,8 +318,8 @@ const BlogListing = () => {
                                                     key={option.value}
                                                     onClick={() => setSortBy(option.value)}
                                                     className={`w-full px-4 py-3 rounded-xl flex items-center space-x-3 transition-all ${sortBy === option.value
-                                                            ? 'bg-primary text-white'
-                                                            : 'bg-gray-50 text-textPrimary hover:bg-gray-100'
+                                                        ? 'bg-primary text-white'
+                                                        : 'bg-gray-50 text-textPrimary hover:bg-gray-100'
                                                         }`}
                                                 >
                                                     <IconComponent className="h-5 w-5" />
@@ -436,7 +439,7 @@ const BlogListing = () => {
                                             to={`/blog/${blog.id}`}
                                             className="flex items-center space-x-1 text-accent text-sm font-semibold hover:space-x-2 transition-all"
                                         >
-                                            <span>Read</span>
+                                            <span>Read Story</span>
                                             <ArrowRight className="h-4 w-4" />
                                         </Link>
                                     </div>
@@ -453,8 +456,8 @@ const BlogListing = () => {
                             onClick={() => handlePageChange(currentPage - 1)}
                             disabled={currentPage === 1}
                             className={`px-4 py-2 rounded-lg font-medium transition-all ${currentPage === 1
-                                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                                    : 'bg-white text-textPrimary hover:bg-primary hover:text-white shadow-md'
+                                ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                                : 'bg-white text-textPrimary hover:bg-primary hover:text-white shadow-md'
                                 }`}
                         >
                             Previous
@@ -468,8 +471,8 @@ const BlogListing = () => {
                                         key={page}
                                         onClick={() => handlePageChange(page)}
                                         className={`w-10 h-10 rounded-lg font-semibold transition-all ${currentPage === page
-                                                ? 'bg-primary text-white shadow-lg'
-                                                : 'bg-white text-textPrimary hover:bg-primary/10'
+                                            ? 'bg-primary text-white shadow-lg'
+                                            : 'bg-white text-textPrimary hover:bg-primary/10'
                                             }`}
                                     >
                                         {page}
@@ -482,8 +485,8 @@ const BlogListing = () => {
                             onClick={() => handlePageChange(currentPage + 1)}
                             disabled={currentPage === totalPages}
                             className={`px-4 py-2 rounded-lg font-medium transition-all ${currentPage === totalPages
-                                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                                    : 'bg-white text-textPrimary hover:bg-primary hover:text-white shadow-md'
+                                ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                                : 'bg-white text-textPrimary hover:bg-primary hover:text-white shadow-md'
                                 }`}
                         >
                             Next
