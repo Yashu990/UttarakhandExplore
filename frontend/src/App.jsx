@@ -22,6 +22,7 @@ import SubmitStory from './pages/contributor/SubmitStory';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import SubmissionsQueue from './pages/admin/SubmissionsQueue';
 import SubmissionReview from './pages/admin/SubmissionReview';
+import Culture from './pages/Culture';
 
 function App() {
     return (
@@ -35,6 +36,7 @@ function App() {
                     <Route path="/about" element={<AboutUttarakhand />} />
                     <Route path="/about-us" element={<AboutUs />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="/culture" element={<Culture />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/signup" element={<Signup />} />
                     <Route path="/profile" element={<Profile />} />

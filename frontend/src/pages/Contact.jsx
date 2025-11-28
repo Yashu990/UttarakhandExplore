@@ -98,8 +98,18 @@ const Contact = () => {
     return (
         <div className="min-h-screen bg-gradient-to-b from-bgLight to-white">
             {/* Hero Section */}
-            <div className="bg-gradient-to-br from-primary via-primary/95 to-secondary text-white py-20 mt-20">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative py-32 mt-20 overflow-hidden">
+                {/* Background Image */}
+                <div
+                    className="absolute inset-0 bg-cover bg-center"
+                    style={{
+                        backgroundImage: `url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070')`,
+                    }}
+                >
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/90 to-secondary/95" />
+                </div>
+
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -111,15 +121,15 @@ const Contact = () => {
                             transition={{ delay: 0.2 }}
                             className="inline-block mb-6"
                         >
-                            <span className="px-6 py-2 bg-accent/90 backdrop-blur-sm rounded-full text-sm font-medium">
+                            <span className="px-6 py-3 bg-accent backdrop-blur-sm rounded-full text-white text-sm font-semibold shadow-lg">
                                 📧 Get in Touch
                             </span>
                         </motion.div>
 
-                        <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6">
+                        <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 text-white">
                             We'd Love to Hear from You
                         </h1>
-                        <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+                        <p className="text-xl md:text-2xl text-white/95 max-w-3xl mx-auto leading-relaxed">
                             Whether you have a question about a destination, want to share your story, or just want to say hello, we're here for you.
                         </p>
                     </motion.div>
@@ -363,24 +373,32 @@ const Contact = () => {
                         </div>
 
                         {/* Social Links */}
-                        <div className="bg-white rounded-3xl shadow-xl p-8">
-                            <h3 className="text-2xl font-heading font-bold text-textPrimary mb-6">
-                                {t('contactPage.social')}
+                        <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl shadow-xl p-8 border border-gray-100">
+                            <h3 className="text-2xl font-heading font-bold text-textPrimary mb-2 text-center">
+                                Connect With Us
                             </h3>
-                            <div className="flex items-center justify-center space-x-4">
+                            <p className="text-textSecondary text-center mb-8">
+                                Follow us on social media for updates and stories
+                            </p>
+                            <div className="grid grid-cols-3 sm:grid-cols-5 gap-4 sm:gap-6">
                                 {socialLinks.map((social, index) => {
                                     const IconComponent = social.icon;
                                     return (
-                                        <a
+                                        <motion.a
                                             key={index}
                                             href={social.url}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className={`p-4 bg-gray-100 rounded-full text-textSecondary ${social.color} transition-all hover:scale-110`}
+                                            initial={{ opacity: 0, scale: 0.8 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            transition={{ delay: index * 0.1 }}
+                                            whileHover={{ scale: 1.1, y: -5 }}
+                                            className={`flex flex-col items-center justify-center p-5 sm:p-6 bg-white rounded-2xl text-textSecondary ${social.color} transition-all shadow-md hover:shadow-xl border border-gray-200`}
                                             title={social.name}
                                         >
-                                            <IconComponent className="h-6 w-6" />
-                                        </a>
+                                            <IconComponent className="h-7 w-7 sm:h-8 sm:w-8" />
+                                            <span className="text-xs mt-2 font-medium">{social.name}</span>
+                                        </motion.a>
                                     );
                                 })}
                             </div>
