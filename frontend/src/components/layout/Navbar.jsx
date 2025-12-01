@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Search, Menu, X, User, Mountain, LogOut, UserCircle, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -12,6 +12,7 @@ const Navbar = () => {
     const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
 
     const navigate = useNavigate();
+    const location = useLocation();
 
     // Check authentication status
     useEffect(() => {
@@ -21,7 +22,14 @@ const Navbar = () => {
 
             setIsAuthenticated(authStatus === 'true');
             if (userData) {
-                setUser(JSON.parse(userData));
+                try {
+                    setUser(JSON.parse(userData));
+                } catch (error) {
+                    console.error('Error parsing user data:', error);
+                    setUser(null);
+                }
+            } else {
+                setUser(null);
             }
         };
 
@@ -30,7 +38,7 @@ const Navbar = () => {
         // Listen for storage changes (e.g., login/logout in another tab)
         window.addEventListener('storage', checkAuth);
         return () => window.removeEventListener('storage', checkAuth);
-    }, []);
+    }, [location]); // Re-check auth whenever location changes
 
     useEffect(() => {
         const handleScroll = () => {
@@ -332,10 +340,52 @@ const Navbar = () => {
                             </div>
 
                             <div className="pt-6 border-t border-gray-200 space-y-4">
-                                <button className="w-full flex items-center justify-center space-x-2 px-4 py-3 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors">
-                                    <User className="h-5 w-5" />
-                                    <span className="font-medium">Login / Sign Up</span>
-                                </button>
+                                {isAuthenticated && user ? (
+                                    <>
+                                        <div className="bg-gray-50 rounded-xl p-4 mb-4">
+                                            <div className="flex items-center space-x-3">
+                                                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg">
+                                                    {user.name ? user.name.charAt(0).toUpperCase() : 'U'}
+                                                </div>
+                                                <div className="flex-1">
+                                                    <p className="font-semibold text-gray-900">{user.name || 'User'}</p>
+                                                    <p className="text-sm text-gray-600 truncate">
+                                                        {user.email || user.mobile}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <Link
+                                            to="/profile"
+                                            onClick={() => setIsMenuOpen(false)}
+                                            className="w-full flex items-center justify-center space-x-2 px-4 py-3 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors">
+                                            <UserCircle className="h-5 w-5" />
+                                            <span className="font-medium">View Profile</span>
+                                        </Link>
+                                        <button
+                                            onClick={() => {
+                                                localStorage.removeItem('isAuthenticated');
+                                                localStorage.removeItem('user');
+                                                localStorage.removeItem('rememberMe');
+                                                setIsAuthenticated(false);
+                                                setUser(null);
+                                                setIsMenuOpen(false);
+                                                navigate('/');
+                                            }}
+                                            className="w-full flex items-center justify-center space-x-2 px-4 py-3 bg-red-50 text-red-600 rounded-full hover:bg-red-100 transition-colors">
+                                            <LogOut className="h-5 w-5" />
+                                            <span className="font-medium">Logout</span>
+                                        </button>
+                                    </>
+                                ) : (
+                                    <Link
+                                        to="/login"
+                                        onClick={() => setIsMenuOpen(false)}
+                                        className="w-full flex items-center justify-center space-x-2 px-4 py-3 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors">
+                                        <User className="h-5 w-5" />
+                                        <span className="font-medium">Login / Sign Up</span>
+                                    </Link>
+                                )}
                             </div>
                         </div>
                     </motion.div>

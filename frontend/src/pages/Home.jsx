@@ -13,9 +13,9 @@ const Home = () => {
             <HeroSection />
             <CategoryCards />
             <FeaturedStories />
+            <LatestBlogs />
             <ExploreSection />
             <CharDhamSection />
-            <LatestBlogs />
             <VideosPreview />
         </div>
     );

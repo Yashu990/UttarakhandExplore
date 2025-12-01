@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Heart, Bookmark, Share2, Clock, User, ArrowRight } from 'lucide-react';
 
-
-
 const LatestBlogs = () => {
-    // const { t } = useLanguage();
-    const blogs = [
+    const [blogs, setBlogs] = useState([]);
+
+    // Static blog data (fallback content)
+    const staticBlogs = [
         {
             id: 1,
             title: 'The Mystical Char Dham Yatra',
@@ -19,6 +19,7 @@ const LatestBlogs = () => {
             category: 'Travel Guides',
             likes: 156,
             saves: 45,
+            isStatic: true,
         },
         {
             id: 2,
@@ -31,6 +32,7 @@ const LatestBlogs = () => {
             category: 'Culture',
             likes: 203,
             saves: 78,
+            isStatic: true,
         },
         {
             id: 3,
@@ -43,6 +45,7 @@ const LatestBlogs = () => {
             category: 'Adventure',
             likes: 287,
             saves: 112,
+            isStatic: true,
         },
         {
             id: 4,
@@ -55,6 +58,7 @@ const LatestBlogs = () => {
             category: 'Culture',
             likes: 134,
             saves: 56,
+            isStatic: true,
         },
         {
             id: 5,
@@ -67,6 +71,7 @@ const LatestBlogs = () => {
             category: 'Adventure',
             likes: 245,
             saves: 98,
+            isStatic: true,
         },
         {
             id: 6,
@@ -79,8 +84,74 @@ const LatestBlogs = () => {
             category: 'Culture',
             likes: 178,
             saves: 67,
+            isStatic: true,
         },
     ];
+
+    // Calculate read time based on content length
+    const calculateReadTime = (content) => {
+        if (!content) return '5 min';
+        const wordsPerMinute = 200;
+        const wordCount = content.split(/\s+/).length;
+        const minutes = Math.ceil(wordCount / wordsPerMinute);
+        return `${minutes} min`;
+    };
+
+    // Transform submission to blog format
+    const transformSubmissionToBlog = (submission) => {
+        const publishedDate = new Date(submission.publishedAt || submission.submittedAt);
+
+        return {
+            id: submission.id,
+            title: submission.title,
+            excerpt: submission.excerpt || (submission.content ? submission.content.substring(0, 150) + '...' : 'No excerpt available'),
+            image: submission.images?.[0]?.url || 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=800',
+            author: submission.contributorName || 'Anonymous Contributor',
+            date: publishedDate.toLocaleDateString('en-GB', {
+                day: 'numeric',
+                month: 'short',
+                year: 'numeric',
+            }),
+            readTime: calculateReadTime(submission.content),
+            category: submission.category || 'General',
+            likes: submission.likes || 0,
+            saves: submission.saves || 0,
+            isContributorPost: true,
+            publishedTimestamp: publishedDate.getTime(),
+        };
+    };
+
+    // Load blogs on component mount
+    useEffect(() => {
+        try {
+            // Fetch approved submissions from localStorage
+            const submissions = JSON.parse(localStorage.getItem('submissions') || '[]');
+            const approvedPosts = submissions
+                .filter(s => s.status === 'approved')
+                .map(transformSubmissionToBlog);
+
+            // Add timestamp to static blogs for sorting
+            const staticBlogsWithTimestamp = staticBlogs.map(blog => ({
+                ...blog,
+                publishedTimestamp: new Date(blog.date).getTime(),
+            }));
+
+            // Merge approved posts with static blogs
+            const allBlogs = [...approvedPosts, ...staticBlogsWithTimestamp];
+
+            // Sort by published date (most recent first)
+            allBlogs.sort((a, b) => b.publishedTimestamp - a.publishedTimestamp);
+
+            // Limit to top 6 posts
+            const topBlogs = allBlogs.slice(0, 6);
+
+            setBlogs(topBlogs);
+        } catch (error) {
+            console.error('Error loading blogs:', error);
+            // Fallback to static blogs if there's an error
+            setBlogs(staticBlogs);
+        }
+    }, []);
 
     const container = {
         hidden: { opacity: 0 },
@@ -158,6 +229,15 @@ const LatestBlogs = () => {
                                         {blog.category}
                                     </span>
                                 </div>
+
+                                {/* Contributor Badge */}
+                                {blog.isContributorPost && (
+                                    <div className="absolute top-4 right-4">
+                                        <span className="px-3 py-1 bg-accent/90 backdrop-blur-sm rounded-full text-xs font-semibold text-white">
+                                            Contributor
+                                        </span>
+                                    </div>
+                                )}
 
                                 {/* Quick Actions */}
                                 <div className="absolute bottom-4 right-4 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
