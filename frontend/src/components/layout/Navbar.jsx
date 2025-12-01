@@ -139,6 +139,14 @@ const Navbar = () => {
                             Videos
                         </Link>
                         <Link
+                            to="/plan-yatra"
+                            className={`font-medium transition-colors hover:text-accent flex items-center space-x-1 ${isScrolled ? 'text-accent' : 'text-yellow-300'
+                                }`}
+                        >
+                            <span>🗺️</span>
+                            <span>Plan Your Yatra</span>
+                        </Link>
+                        <Link
                             to="/about"
                             className={`font-medium transition-colors hover:text-accent ${isScrolled ? 'text-textPrimary' : 'text-white'
                                 }`}
@@ -322,6 +330,14 @@ const Navbar = () => {
                                     onClick={() => setIsMenuOpen(false)}
                                 >
                                     Videos
+                                </Link>
+                                <Link
+                                    to="/plan-yatra"
+                                    className="block text-lg font-medium text-accent hover:text-primary transition-colors flex items-center space-x-2"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    <span>🗺️</span>
+                                    <span>Plan Your Yatra</span>
                                 </Link>
                                 <Link
                                     to="/about"

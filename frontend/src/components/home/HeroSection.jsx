@@ -69,7 +69,7 @@ const HeroSection = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.3 }}
                     >
-                        Explore the Unseen Beauty of
+                        Explore the Soul of
                         <br />
                         <span className="bg-gradient-to-r from-accent via-yellow-400 to-accent bg-clip-text text-transparent animate-pulse">
                             Uttarakhand
@@ -82,7 +82,7 @@ const HeroSection = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.5 }}
                     >
-                        Discover the land of gods, mountains, and rivers. Experience the serenity and adventure that awaits you.
+                        Heritage. Culture. Adventure. Travel. Stories.
                     </motion.p>
 
                     <motion.div

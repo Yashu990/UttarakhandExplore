@@ -23,6 +23,7 @@ import AdminDashboard from './pages/admin/AdminDashboard';
 import SubmissionsQueue from './pages/admin/SubmissionsQueue';
 import SubmissionReview from './pages/admin/SubmissionReview';
 import Culture from './pages/Culture';
+import PlanYatra from './pages/PlanYatra';
 
 function App() {
     return (
@@ -33,6 +34,7 @@ function App() {
                     <Route path="/blogs" element={<BlogListing />} />
                     <Route path="/categories" element={<Categories />} />
                     <Route path="/videos" element={<Videos />} />
+                    <Route path="/plan-yatra" element={<PlanYatra />} />
                     <Route path="/about" element={<AboutUttarakhand />} />
                     <Route path="/about-us" element={<AboutUs />} />
                     <Route path="/contact" element={<Contact />} />
